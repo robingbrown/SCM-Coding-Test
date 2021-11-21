@@ -1,4 +1,5 @@
 ﻿using PromotionEngine;
+using System.Collections.Generic;
 using Xunit;
 
 namespace Engine.Tests
@@ -12,10 +13,11 @@ namespace Engine.Tests
             Product a = new() { ID = "A", Price = 50m };
             Cart cart = new();
             cart.AddItem(a, 3);
+            List<IPromotion> promotions = new();
+            promotions.Add(new BulkPurchasePromotion("A", 3, 20m));
 
             //Act
-            PromotionsEngine engine = new();
-            decimal totalordervalue = engine.Calculate(cart);
+            decimal totalordervalue = PromotionsEngine.Calculate(cart, promotions);
 
             //Assert
             Assert.Equal(130m, totalordervalue);
@@ -31,10 +33,11 @@ namespace Engine.Tests
             Cart cart = new();
             cart.AddItem(c, 1);
             cart.AddItem(d, 1);
+            List<IPromotion> promotions = new();
+            promotions.Add(new MatchedProductsPromotion("C", "D", 5m));
 
             //Act
-            PromotionsEngine engine = new();
-            decimal totalordervalue = engine.Calculate(cart);
+            decimal totalordervalue = PromotionsEngine.Calculate(cart, promotions);
 
             //Assert
             Assert.Equal(30m, totalordervalue);
@@ -44,6 +47,12 @@ namespace Engine.Tests
         [Fact]
         public void ScenarioA()
         {
+            //Scenario A
+            //1*A   50
+            //1*B   30
+            //1*C   20
+            //Total 100
+
             //Arrange
             Product a = new() { ID = "A", Price = 50m };
             Product b = new() { ID = "B", Price = 30m };
@@ -52,10 +61,13 @@ namespace Engine.Tests
             cart.AddItem(a, 1);
             cart.AddItem(b, 1);
             cart.AddItem(c, 1);
+            List<IPromotion> promotions = new();
+            promotions.Add(new BulkPurchasePromotion("A", 3, 20m));
+            promotions.Add(new BulkPurchasePromotion("B", 2, 20m));
+            promotions.Add(new MatchedProductsPromotion("C", "D", 5m));
 
             //Act
-            PromotionsEngine engine = new();
-            decimal totalordervalue = engine.Calculate(cart);
+            decimal totalordervalue = PromotionsEngine.Calculate(cart, promotions);
 
             //Assert
             Assert.Equal(100m, totalordervalue);
@@ -92,10 +104,13 @@ namespace Engine.Tests
             cart.AddItem(a, 5);
             cart.AddItem(b, 5);
             cart.AddItem(c, 1);
+            List<IPromotion> promotions = new();
+            promotions.Add(new BulkPurchasePromotion("A", 3, 20m));
+            promotions.Add(new BulkPurchasePromotion("B", 2, 20m));
+            promotions.Add(new MatchedProductsPromotion("C", "D", 5m));
 
             //Act
-            PromotionsEngine engine = new();
-            decimal totalordervalue = engine.Calculate(cart);
+            decimal totalordervalue = PromotionsEngine.Calculate(cart, promotions);
 
             //Assert
             Assert.Equal(400m, totalordervalue);
@@ -132,10 +147,13 @@ namespace Engine.Tests
             cart.AddItem(b, 5);
             cart.AddItem(c, 1);
             cart.AddItem(d, 1);
+            List<IPromotion> promotions = new();
+            promotions.Add(new BulkPurchasePromotion("A", 3, 20m));
+            promotions.Add(new BulkPurchasePromotion("B", 2, 20m));
+            promotions.Add(new MatchedProductsPromotion("C", "D", 5m));
 
             //Act
-            PromotionsEngine engine = new();
-            decimal totalordervalue = engine.Calculate(cart);
+            decimal totalordervalue = PromotionsEngine.Calculate(cart, promotions);
 
             //Assert
             Assert.Equal(315m, totalordervalue);

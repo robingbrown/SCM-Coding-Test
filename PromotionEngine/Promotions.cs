@@ -10,24 +10,35 @@ namespace PromotionEngine
         decimal Discount(Cart cart);
     }
     /// <summary>
-    /// Buy three of product A promotion
+    /// Buy a number of products to receive a discount
     /// </summary>
-    public class Buy3APromotion : IPromotion
+    public class BulkPurchasePromotion : IPromotion
     {
-        public decimal Discount(Cart cart) => cart.Items.Where(x => x.ID == "A").Count() >= 3 ? 20m : 0m;    
+        string myProductID;
+        int myQuantity;
+        decimal myDiscount;
+        public BulkPurchasePromotion(string productid, int quantity, decimal discount)
+        {
+            myProductID = productid;
+            myQuantity = quantity;
+            myDiscount = discount;
+        }
+        public decimal Discount(Cart cart) => cart.Items.Where(x => x.ID == myProductID).Count() >= myQuantity ? myDiscount : 0m;
     }
     /// <summary>
-    /// Buy two of product B promotion
+    /// Buy two different products to receive a discount
     /// </summary>
-    public class Buy2BPromotion : IPromotion
+    public class MatchedProductsPromotion : IPromotion
     {
-        public decimal Discount(Cart cart) => cart.Items.Where(x => x.ID == "B").Count() >= 2 ? 15m : 0m;
-    }
-    /// <summary>
-    /// Buy product C and product D promotion
-    /// </summary>
-    public class BuyCnDPromotion : IPromotion
-    {
-        public decimal Discount(Cart cart) => cart.Items.Where(x => x.ID == "C").Count() >= 1 && cart.Items.Where(x => x.ID == "D").Count() >= 1 ? 5m : 0m;
+        string myFirstProductID;
+        string mySecondProductID;
+        decimal myDiscount;
+        public MatchedProductsPromotion(string firstproductid, string secondproductid, decimal discount)
+        {
+            myFirstProductID = firstproductid;
+            mySecondProductID = secondproductid;
+            myDiscount = discount;
+        }
+        public decimal Discount(Cart cart) => cart.Items.Where(x => x.ID == myFirstProductID).Count() >= 1 && cart.Items.Where(x => x.ID == mySecondProductID).Count() >= 1 ? myDiscount : 0m;
     }
 }
