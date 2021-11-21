@@ -14,9 +14,10 @@ namespace PromotionEngine
             bool buyN = cart.Items.Where(x => x.ID == "A").Count() >= 3;
             if (buyN == true)
             {
-                return 130;
+                return 130m;
             }
-            return 0;
+            //Default
+            return 0m;
         }
     }
 }
