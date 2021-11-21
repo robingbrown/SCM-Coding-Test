@@ -21,13 +21,13 @@ namespace PromotionEngine
             bool buyN = cart.Items.Where(x => x.ID == "A").Count() >= 3;
             if (buyN == true)
             {
-                totalOrderValue= 130m;
+                totalOrderValue = 130m;
             }
             // Buy C & D promotion
             bool buyCnD = cart.Items.Where(x => x.ID == "C").Count() == 1 && cart.Items.Where(x => x.ID == "D").Count() == 1;
             if (buyCnD == true)
             {
-                totalOrderValue= 30m;
+                totalOrderValue = 30m;
             }
             return totalOrderValue;
         }
