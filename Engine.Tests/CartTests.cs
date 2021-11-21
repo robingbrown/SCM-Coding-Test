@@ -21,7 +21,7 @@ namespace Engine.Tests
             cart.AddItem(b);
             cart.AddItem(c);
             cart.AddItem(d);
-            Product[] products = cart.Items();
+            Product[] products = cart.Items;
 
             //Assert
             Assert.Equal(4, products.Length);

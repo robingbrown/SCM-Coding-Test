@@ -11,7 +11,7 @@ namespace PromotionEngine
             products.Add(item);
         }
 
-        public Product[] Items() => products.ToArray();
+        public Product[] Items => products.ToArray();
 
     }
 }

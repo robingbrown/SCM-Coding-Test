@@ -10,7 +10,13 @@ namespace PromotionEngine
     {
         public decimal Calculate(Cart cart)
         {
-            throw new NotImplementedException();
+            // Buy N Items promotion
+            bool buyN = cart.Items.Where(x => x.ID == "A").Count() >= 3;
+            if (buyN == true)
+            {
+                return 130;
+            }
+            return 0;
         }
     }
 }

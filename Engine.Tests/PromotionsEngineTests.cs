@@ -16,7 +16,7 @@ namespace Engine.Tests
             //Arrange
             Product a1 = new() { ID = "A", Price = 50m };
             Product a2 = new() { ID = "A", Price = 30m };
-            Product a3 = new() { ID = "C", Price = 20m };
+            Product a3 = new() { ID = "A", Price = 20m };
             Cart cart = new();
             cart.AddItem(a1);
             cart.AddItem(a2);
