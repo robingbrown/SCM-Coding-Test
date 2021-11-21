@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PromotionEngine;
 using Xunit;
-using PromotionEngine;
 
 namespace Engine.Tests
 {
@@ -20,7 +15,7 @@ namespace Engine.Tests
 
             //Act
             PromotionsEngine engine = new();
-            decimal totalordervalue =  engine.Calculate(cart);
+            decimal totalordervalue = engine.Calculate(cart);
 
             //Assert
             Assert.Equal(130m, totalordervalue);

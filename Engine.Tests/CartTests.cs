@@ -1,6 +1,5 @@
-using System;
-using Xunit;
 using PromotionEngine;
+using Xunit;
 
 namespace Engine.Tests
 {
