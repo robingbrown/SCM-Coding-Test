@@ -45,5 +45,27 @@ namespace Engine.Tests
             Assert.Equal(30m, totalordervalue);
 
         }
+    
+        [Fact]
+        public void ScenarioA()
+        {
+            //Arrange
+            Product a = new() { ID = "A", Price = 50m };
+            Product b = new() { ID = "B", Price = 30m };
+            Product c = new() { ID = "C", Price = 20m };
+            //Product d = new() { ID = "D", Price = 15m };
+            Cart cart = new();
+            cart.AddItem(a, 1);
+            cart.AddItem(b, 1);
+            cart.AddItem(c, 1);
+            //cart.AddItem(d, 1);
+
+            //Act
+            PromotionsEngine engine = new();
+            decimal totalordervalue = engine.Calculate(cart);
+
+            //Assert
+            Assert.Equal(100m, totalordervalue);
+        }
     }
 }
