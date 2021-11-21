@@ -11,25 +11,26 @@ namespace PromotionEngine
         public decimal Calculate(Cart cart)
         {
             decimal totalOrderValue = 0m;
-            //Default
+            
+            // Calculate the default total for the cart
             Product[] products = cart.Items;
             for (int index = 0; index < products.Length; index++)
             {
                 totalOrderValue += products[index].Price;
             }
-            // Buy N Items promotion
-            bool buyN = cart.Items.Where(x => x.ID == "A").Count() >= 3;
-            if (buyN == true)
-            {
-                totalOrderValue = 130m;
-            }
+
+            // Now apply any discounts for the various promotions
+            List<decimal> discounts = new();
+
             // Buy C & D promotion
-            bool buyCnD = cart.Items.Where(x => x.ID == "C").Count() == 1 && cart.Items.Where(x => x.ID == "D").Count() == 1;
-            if (buyCnD == true)
-            {
-                totalOrderValue = 30m;
-            }
-            return totalOrderValue;
+            discounts.Add(cart.Items.Where(x => x.ID == "C").Count() >= 1 && cart.Items.Where(x => x.ID == "D").Count() >= 1 ? 5m : 0m);
+
+            // Buy N Items promotion(s)
+            discounts.Add(cart.Items.Where(x => x.ID == "B").Count() >= 2 ? 15m : 0m);
+            discounts.Add(cart.Items.Where(x => x.ID == "A").Count() >= 3 ? 20m : 0m);
+
+            // Return order total minus the largest discount
+            return totalOrderValue - discounts.Max();
         }
     }
 }

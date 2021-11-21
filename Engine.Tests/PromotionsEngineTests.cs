@@ -69,6 +69,26 @@ namespace Engine.Tests
         [Fact]
         public void ScenarioB()
         {
+            // Note that the Scenario B given in the coding test contradicts the instruction:
+            //    For this coding exercise you can assume that the promotions will be mutually exclusive; in other words if one is applied the other promotions will not apply
+            // Also, there is a typo for item C, it should be 20 not 28
+
+            //Scenario B
+            //5 * A       130 + 2 * 50
+            //5 * B       45 + 45 + 30
+            //1 * C       28
+            //Total   370
+
+            // I am going to make the assumption that the mutually exclusive phrase overrules the scenario
+            //  and that only the most valuable promotion should be applied
+            //  which means that Scenario B is as follows:
+
+            //Scenario B
+            //5 * A       130 + 2*50    (230)
+            //5 * B       5*30          (150)
+            //1 * C       20            (20)
+            //Total   400
+
             //Arrange
             Product a = new() { ID = "A", Price = 50m };
             Product b = new() { ID = "B", Price = 30m };
@@ -85,7 +105,7 @@ namespace Engine.Tests
             decimal totalordervalue = engine.Calculate(cart);
 
             //Assert
-            Assert.Equal(370m, totalordervalue);
+            Assert.Equal(400m, totalordervalue);
         }
 
     }
