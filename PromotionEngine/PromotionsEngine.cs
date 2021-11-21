@@ -11,6 +11,12 @@ namespace PromotionEngine
         public decimal Calculate(Cart cart)
         {
             decimal totalOrderValue = 0m;
+            //Default
+            Product[] products = cart.Items;
+            for (int index = 0; index < products.Length; index++)
+            {
+                totalOrderValue += products[index].Price;
+            }
             // Buy N Items promotion
             bool buyN = cart.Items.Where(x => x.ID == "A").Count() >= 3;
             if (buyN == true)
@@ -23,7 +29,6 @@ namespace PromotionEngine
             {
                 totalOrderValue= 30m;
             }
-            //Default
             return totalOrderValue;
         }
     }
