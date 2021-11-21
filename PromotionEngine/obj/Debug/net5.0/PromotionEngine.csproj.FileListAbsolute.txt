@@ -1,0 +1,12 @@
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\PromotionEngine\bin\Debug\net5.0\PromotionEngine.deps.json
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\PromotionEngine\bin\Debug\net5.0\PromotionEngine.dll
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\PromotionEngine\bin\Debug\net5.0\ref\PromotionEngine.dll
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\PromotionEngine\bin\Debug\net5.0\PromotionEngine.pdb
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\PromotionEngine\obj\Debug\net5.0\PromotionEngine.csproj.AssemblyReference.cache
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\PromotionEngine\obj\Debug\net5.0\PromotionEngine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\PromotionEngine\obj\Debug\net5.0\PromotionEngine.AssemblyInfoInputs.cache
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\PromotionEngine\obj\Debug\net5.0\PromotionEngine.AssemblyInfo.cs
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\PromotionEngine\obj\Debug\net5.0\PromotionEngine.csproj.CoreCompileInputs.cache
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\PromotionEngine\obj\Debug\net5.0\PromotionEngine.dll
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\PromotionEngine\obj\Debug\net5.0\ref\PromotionEngine.dll
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\PromotionEngine\obj\Debug\net5.0\PromotionEngine.pdb

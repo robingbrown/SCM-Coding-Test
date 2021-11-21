@@ -1,0 +1,12 @@
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\RulesEngine\bin\Debug\net5.0\RulesEngine.deps.json
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\RulesEngine\bin\Debug\net5.0\RulesEngine.dll
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\RulesEngine\bin\Debug\net5.0\ref\RulesEngine.dll
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\RulesEngine\bin\Debug\net5.0\RulesEngine.pdb
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\RulesEngine\obj\Debug\net5.0\RulesEngine.csproj.AssemblyReference.cache
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\RulesEngine\obj\Debug\net5.0\RulesEngine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\RulesEngine\obj\Debug\net5.0\RulesEngine.AssemblyInfoInputs.cache
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\RulesEngine\obj\Debug\net5.0\RulesEngine.AssemblyInfo.cs
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\RulesEngine\obj\Debug\net5.0\RulesEngine.csproj.CoreCompileInputs.cache
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\RulesEngine\obj\Debug\net5.0\RulesEngine.dll
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\RulesEngine\obj\Debug\net5.0\ref\RulesEngine.dll
+C:\Users\Robin\Source\Repos\robingbrown\SCM-Coding-Test\RulesEngine\obj\Debug\net5.0\RulesEngine.pdb
