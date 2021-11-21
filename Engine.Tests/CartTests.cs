@@ -10,13 +10,13 @@ namespace Engine.Tests
         public void HoldsData()
         {
             //Arrange
-            Product a = new Product { ID = "A", Price = 50m };
-            Product b = new Product { ID = "B", Price = 30m };
-            Product c = new Product { ID = "C", Price = 20m };
-            Product d = new Product { ID = "D", Price = 15m };
+            Product a = new() { ID = "A", Price = 50m };
+            Product b = new() { ID = "B", Price = 30m };
+            Product c = new() { ID = "C", Price = 20m };
+            Product d = new() { ID = "D", Price = 15m };
 
             //Act
-            Cart cart = new Cart();
+            Cart cart = new();
             cart.AddItem(a);
             cart.AddItem(b);
             cart.AddItem(c);
