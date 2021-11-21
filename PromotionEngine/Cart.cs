@@ -1,17 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PromotionEngine
 {
     public class Cart
     {
-        public void AddItem(Product a)
+        private List<Product> products = new();
+        public void AddItem(Product item)
         {
-            throw new NotImplementedException();
+            products.Add(item);
         }
 
         public Product[] Items()
         {
-            throw new NotImplementedException();
+            return products.ToArray();
         }
     }
 }
