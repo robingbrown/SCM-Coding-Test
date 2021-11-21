@@ -14,13 +14,9 @@ namespace Engine.Tests
         public void BuyNItems()
         {
             //Arrange
-            Product a1 = new() { ID = "A", Price = 50m };
-            Product a2 = new() { ID = "A", Price = 30m };
-            Product a3 = new() { ID = "A", Price = 20m };
+            Product a = new() { ID = "A", Price = 50m };
             Cart cart = new();
-            cart.AddItem(a1);
-            cart.AddItem(a2);
-            cart.AddItem(a3);
+            cart.AddItem(a, 3);
 
             //Act
             PromotionsEngine engine = new();

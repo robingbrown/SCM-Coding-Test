@@ -17,10 +17,10 @@ namespace Engine.Tests
 
             //Act
             Cart cart = new();
-            cart.AddItem(a);
-            cart.AddItem(b);
-            cart.AddItem(c);
-            cart.AddItem(d);
+            cart.AddItem(a, 1);
+            cart.AddItem(b, 1);
+            cart.AddItem(c, 1);
+            cart.AddItem(d, 1);
             Product[] products = cart.Items;
 
             //Assert
