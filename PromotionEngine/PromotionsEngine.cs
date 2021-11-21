@@ -16,6 +16,12 @@ namespace PromotionEngine
             {
                 return 130m;
             }
+            // Buy C & D promotion
+            bool buyCnD = cart.Items.Where(x => x.ID == "C").Count() == 1 && cart.Items.Where(x => x.ID == "D").Count() == 1;
+            if (buyCnD == true)
+            {
+                return 30m;
+            }
             //Default
             return 0m;
         }
