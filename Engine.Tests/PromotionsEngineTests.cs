@@ -93,12 +93,10 @@ namespace Engine.Tests
             Product a = new() { ID = "A", Price = 50m };
             Product b = new() { ID = "B", Price = 30m };
             Product c = new() { ID = "C", Price = 20m };
-            //Product d = new() { ID = "D", Price = 15m };
             Cart cart = new();
             cart.AddItem(a, 5);
             cart.AddItem(b, 5);
             cart.AddItem(c, 1);
-            //cart.AddItem(d, 1);
 
             //Act
             PromotionsEngine engine = new();
@@ -106,6 +104,46 @@ namespace Engine.Tests
 
             //Assert
             Assert.Equal(400m, totalordervalue);
+        }
+
+        [Fact]
+        public void ScenarioC()
+        {
+            // Note that again the values given for scenario C contradict the instructions
+
+            //Scenario C
+            //3 * A 130
+            //5 * B 45 + 45 + 1 * 30
+            //1 * C -
+            //1 * D 30
+            //Total 280
+
+            // So again I have changed the values to match the instructions
+
+            //Scenario C
+            //3 * A 130         (130)
+            //5 * B 5*30        (150)
+            //1 * C -           (20)
+            //1 * D 30          (15)
+            //Total             300
+
+            //Arrange
+            Product a = new() { ID = "A", Price = 50m };
+            Product b = new() { ID = "B", Price = 30m };
+            Product c = new() { ID = "C", Price = 20m };
+            Product d = new() { ID = "D", Price = 15m };
+            Cart cart = new();
+            cart.AddItem(a, 3);
+            cart.AddItem(b, 5);
+            cart.AddItem(c, 1);
+            cart.AddItem(d, 1);
+
+            //Act
+            PromotionsEngine engine = new();
+            decimal totalordervalue = engine.Calculate(cart);
+
+            //Assert
+            Assert.Equal(315m, totalordervalue);
         }
 
     }
