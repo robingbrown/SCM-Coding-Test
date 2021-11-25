@@ -16,15 +16,14 @@ namespace PromotionEngine
                 totalOrderValue += products[index].Price;
             }
 
-            // Now apply any discounts for the various promotions
-            List<decimal> discounts = new();
-            foreach(IPromotion promotion in promotions)
+            // Check we actually have promotions
+            if (promotions.Count == 0)
             {
-                discounts.Add(promotion.Discount(cart));
+                return totalOrderValue;
             }
 
             // Return order total minus the largest discount
-            return totalOrderValue - discounts.Max();
+            return totalOrderValue - promotions.Select(x => x.Discount(cart)).Max();
         }
     }
 }
